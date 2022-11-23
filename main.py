@@ -1,5 +1,7 @@
 from random import randint
 
+from graphic_arts.start_game_banner import run_screensaver
+
 
 def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
@@ -12,6 +14,7 @@ def attack(char_name: str, char_class: str) -> str:
         return (f'{char_name} нанёс урон противнику равный '
                 f'{5 + randint(-3, -1)}')
     return 'Unknow'
+    """Attack."""
 
 
 def defence(char_name: str, char_class: str) -> str:
@@ -22,6 +25,7 @@ def defence(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
     return 'Unknow'
+    """Defence."""
 
 
 def special(char_name: str, char_class: str) -> str:
@@ -33,6 +37,7 @@ def special(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
     return (f'{char_name} не применил специальное умение')
+    """Special."""
 
 
 def start_training(char_name: str, char_class: str) -> str:
@@ -57,6 +62,7 @@ def start_training(char_name: str, char_class: str) -> str:
         if cmd == 'special':
             print(special(char_name, char_class))
     return 'Тренировка окончена.'
+    """Trening."""
 
 
 def choice_char_class() -> str:
@@ -79,9 +85,10 @@ def choice_char_class() -> str:
                                'другую кнопку, чтобы выбрать другого '
                                'персонажа ').lower()
     return char_class
+    """Char class."""
 
 
-def main():
+if __name__ == '__main__':
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name = input('...назови себя: ')
